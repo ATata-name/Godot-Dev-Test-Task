@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgqkcmnrmpnyb"]
+
+[ext_resource type="Script" path="res://assets/scenes/world/houses/house.gd" id="1_edyqh"]
+[ext_resource type="Texture2D" uid="uid://dasuy6hhv6a2r" path="res://icon.svg" id="1_ymive"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0quxd"]
+size = Vector2(310, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78na2"]
+size = Vector2(40, 20)
+
+[node name="House" type="Node2D"]
+script = ExtResource("1_edyqh")
+
+[node name="Exterior" type="Sprite2D" parent="."]
+position = Vector2(0, -92.25)
+scale = Vector2(2.42187, 1.43359)
+texture = ExtResource("1_ymive")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -68.5)
+shape = SubResource("RectangleShape2D_0quxd")
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(0, -26)
+scale = Vector2(0.359375, 0.398438)
+texture = ExtResource("1_ymive")
+
+[node name="Enter" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enter"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_78na2")
+
+[node name="Exit" type="Marker2D" parent="."]
+position = Vector2(0, 43)
+
+[connection signal="body_entered" from="Enter" to="." method="_on_enter_body_entered"]

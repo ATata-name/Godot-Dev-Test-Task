@@ -1,0 +1,85 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3g7p80kgt2jv"]
+
+[ext_resource type="Script" path="res://assets/scenes/ui/hud.gd" id="1_vjgnk"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_vjgnk")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1036.0
+offset_bottom = -583.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.168627, 0.168627, 0.168627, 0.698039)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="HP" type="Label" parent="Control/BG/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "HP: 0/0"
+
+[node name="Keys" type="Label" parent="Control/BG/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Keys: 0"
+
+[node name="MessageControl" type="Control" parent="Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 528.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="Control/MessageControl"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.168627, 0.168627, 0.168627, 0.698039)
+
+[node name="Message" type="Label" parent="Control/MessageControl"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "some text"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MessageTimer" type="Timer" parent="Control/MessageControl"]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="Control/MessageControl/MessageTimer" to="." method="_on_message_timer_timeout"]

@@ -1,0 +1,126 @@
+[gd_scene load_steps=17 format=3 uid="uid://co75ler2p1g87"]
+
+[ext_resource type="Script" path="res://assets/scenes/world/street.gd" id="1_nc4fs"]
+[ext_resource type="PackedScene" uid="uid://dgqkcmnrmpnyb" path="res://assets/scenes/world/houses/house.tscn" id="2_aby4u"]
+[ext_resource type="Texture2D" uid="uid://dasuy6hhv6a2r" path="res://icon.svg" id="2_yurtn"]
+[ext_resource type="PackedScene" uid="uid://df05qs0uhlqoo" path="res://assets/scenes/world/houses/interior/house_interior_1.tscn" id="4_sj1hb"]
+[ext_resource type="PackedScene" uid="uid://ghu4ooxvjrpt" path="res://assets/scenes/entities/items/item.tscn" id="4_stfjq"]
+[ext_resource type="PackedScene" uid="uid://fxyhkq3y1hoo" path="res://assets/scenes/entities/items/apple.tscn" id="5_24qga"]
+[ext_resource type="PackedScene" uid="uid://ds6ps4lnu43xy" path="res://assets/scenes/entities/items/orange.tscn" id="6_xntig"]
+[ext_resource type="PackedScene" uid="uid://cffc1do05pjgl" path="res://assets/scenes/entities/items/key.tscn" id="7_30wrn"]
+[ext_resource type="PackedScene" uid="uid://c88aoln4fc5tv" path="res://assets/scenes/entities/items/chili.tscn" id="8_k5fwn"]
+[ext_resource type="PackedScene" uid="uid://bgx0dw5jynaer" path="res://assets/scenes/entities/items/olives.tscn" id="9_anfwm"]
+[ext_resource type="PackedScene" uid="uid://dxixf7lgkucrm" path="res://assets/scenes/entities/items/alarm_potion.tscn" id="10_7pg86"]
+[ext_resource type="PackedScene" uid="uid://c0ypnhycbyycc" path="res://assets/scenes/world/houses/interior/house_interior_2.tscn" id="12_3ruis"]
+[ext_resource type="PackedScene" uid="uid://c2okgb7q5rpyv" path="res://assets/scenes/world/houses/interior/house_interior_3.tscn" id="13_6aol7"]
+[ext_resource type="PackedScene" uid="uid://bvg7japqaupbf" path="res://assets/scenes/entities/interactive_objects/interactive_object.tscn" id="13_klm6b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nity4"]
+size = Vector2(1202, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plrqn"]
+size = Vector2(20, 128)
+
+[node name="Street" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_nc4fs")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+position = Vector2(570, 1176)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+shape = SubResource("RectangleShape2D_nity4")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-14, -1171)
+shape = SubResource("RectangleShape2D_nity4")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(600, -584)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_nity4")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-610, -588)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_nity4")
+metadata/_edit_lock_ = true
+
+[node name="House" parent="." instance=ExtResource("2_aby4u")]
+modulate = Color(1, 0.22195, 0.600771, 1)
+position = Vector2(305, 362)
+interior = ExtResource("4_sj1hb")
+
+[node name="Item" parent="." instance=ExtResource("4_stfjq")]
+position = Vector2(498, 534)
+
+[node name="Item2" parent="." instance=ExtResource("5_24qga")]
+position = Vector2(405, 529)
+
+[node name="Item5" parent="." instance=ExtResource("5_24qga")]
+position = Vector2(688, 536)
+
+[node name="Item6" parent="." instance=ExtResource("5_24qga")]
+position = Vector2(798, 534)
+
+[node name="Item3" parent="." instance=ExtResource("6_xntig")]
+position = Vector2(609, 543)
+
+[node name="Item4" parent="." instance=ExtResource("7_30wrn")]
+position = Vector2(319, 528)
+
+[node name="chili" parent="." instance=ExtResource("8_k5fwn")]
+position = Vector2(249, 527)
+
+[node name="olives" parent="." instance=ExtResource("9_anfwm")]
+position = Vector2(367, 475)
+
+[node name="alarm potion" parent="." instance=ExtResource("10_7pg86")]
+position = Vector2(176, 522)
+
+[node name="Enter" type="Marker2D" parent="."]
+position = Vector2(533, 629)
+
+[node name="House2" parent="." instance=ExtResource("2_aby4u")]
+position = Vector2(625, 362)
+interior = ExtResource("12_3ruis")
+
+[node name="House3" parent="." instance=ExtResource("2_aby4u")]
+position = Vector2(943, 362)
+interior = ExtResource("13_6aol7")
+opened = true
+
+[node name="House4" parent="." instance=ExtResource("2_aby4u")]
+position = Vector2(950, 778)
+
+[node name="InteractiveObject" parent="." instance=ExtResource("13_klm6b")]
+position = Vector2(901, 483)
+text = "Test @_@"
+
+[node name="InteractiveObject2" parent="." instance=ExtResource("13_klm6b")]
+position = Vector2(149, 449)
+
+[node name="Object" type="Node2D" parent="."]
+position = Vector2(175, 674)
+
+[node name="Sprite2D" type="Sprite2D" parent="Object"]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.15625, 1)
+texture = ExtResource("2_yurtn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Object"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object/StaticBody2D"]
+shape = SubResource("RectangleShape2D_plrqn")
+
+[node name="InteractiveObject3" parent="." instance=ExtResource("13_klm6b")]
+position = Vector2(136, 718)
+text = "You can't interact with this object through the wall either"
+
+[node name="InteractiveObject4" parent="." instance=ExtResource("13_klm6b")]
+position = Vector2(214, 634)
+text = "You cannot interact with this object through a wall."

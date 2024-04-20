@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnq0gdjfrllvo"]
+
+[ext_resource type="PackedScene" uid="uid://b8280hv565pjk" path="res://assets/scenes/entities/player.tscn" id="1_sol0b"]
+[ext_resource type="Script" path="res://assets/scenes/game.gd" id="1_wwsal"]
+[ext_resource type="PackedScene" uid="uid://co75ler2p1g87" path="res://assets/scenes/world/street.tscn" id="2_7mdq3"]
+[ext_resource type="PackedScene" uid="uid://d3g7p80kgt2jv" path="res://assets/scenes/ui/hud.tscn" id="3_3rer3"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_wwsal")
+
+[node name="Level" type="Node2D" parent="."]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="Street" parent="Level" instance=ExtResource("2_7mdq3")]
+y_sort_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_sol0b")]
+position = Vector2(499, 406)
+
+[node name="HUD" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_3rer3")]
+player = NodePath("../Player")

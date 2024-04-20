@@ -1,0 +1,158 @@
+[gd_scene load_steps=18 format=3 uid="uid://b8280hv565pjk"]
+
+[ext_resource type="Script" path="res://assets/scenes/entities/Player.gd" id="1_mewdd"]
+[ext_resource type="Texture2D" uid="uid://2ooylw0uwcjx" path="res://assets/images/People3.png" id="2_t5v1d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i040"]
+atlas = ExtResource("2_t5v1d")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad3du"]
+atlas = ExtResource("2_t5v1d")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1ynt"]
+atlas = ExtResource("2_t5v1d")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_daqa7"]
+atlas = ExtResource("2_t5v1d")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuwmg"]
+atlas = ExtResource("2_t5v1d")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nstk"]
+atlas = ExtResource("2_t5v1d")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_beyak"]
+atlas = ExtResource("2_t5v1d")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rn3md"]
+atlas = ExtResource("2_t5v1d")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojt4a"]
+atlas = ExtResource("2_t5v1d")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe7bi"]
+atlas = ExtResource("2_t5v1d")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx5jw"]
+atlas = ExtResource("2_t5v1d")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6qou"]
+atlas = ExtResource("2_t5v1d")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s177q"]
+atlas = ExtResource("2_t5v1d")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x4vc2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i040")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad3du")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1ynt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_daqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1ynt")
+}],
+"loop": true,
+"name": &"move_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuwmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nstk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_beyak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nstk")
+}],
+"loop": true,
+"name": &"move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rn3md")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojt4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe7bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojt4a")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx5jw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6qou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s177q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6qou")
+}],
+"loop": true,
+"name": &"move_up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esbef"]
+size = Vector2(36, 24)
+
+[node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_mewdd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_x4vc2")
+animation = &"move_down"
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_esbef")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+target_position = Vector2(0, 80)

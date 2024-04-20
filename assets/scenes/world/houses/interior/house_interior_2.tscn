@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0ypnhycbyycc"]
+
+[ext_resource type="PackedScene" uid="uid://dvb3aiu0wla63" path="res://assets/scenes/world/houses/interior/interior.tscn" id="1_thcsm"]
+[ext_resource type="Texture2D" uid="uid://bqp17sy76440f" path="res://assets/images/interior/floor/Cobblestones2.png" id="2_6fc55"]
+[ext_resource type="Texture2D" uid="uid://dkt8qsgyxklmo" path="res://assets/images/interior/wall/Tower.png" id="3_ha071"]
+[ext_resource type="PackedScene" uid="uid://cffc1do05pjgl" path="res://assets/scenes/entities/items/key.tscn" id="4_l1hgv"]
+
+[node name="HouseInterior2" instance=ExtResource("1_thcsm")]
+
+[node name="Floor" parent="." index="0"]
+texture = ExtResource("2_6fc55")
+
+[node name="Wall" parent="." index="1"]
+texture = ExtResource("3_ha071")
+
+[node name="key" parent="." index="5" instance=ExtResource("4_l1hgv")]
+position = Vector2(172, 607)
+
+[node name="key2" parent="." index="6" instance=ExtResource("4_l1hgv")]
+position = Vector2(230, 556)
+
+[node name="key3" parent="." index="7" instance=ExtResource("4_l1hgv")]
+position = Vector2(317, 568)

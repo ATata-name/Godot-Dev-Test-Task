@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2okgb7q5rpyv"]
+
+[ext_resource type="PackedScene" uid="uid://dvb3aiu0wla63" path="res://assets/scenes/world/houses/interior/interior.tscn" id="1_7rgtx"]
+[ext_resource type="PackedScene" uid="uid://bgx0dw5jynaer" path="res://assets/scenes/entities/items/olives.tscn" id="2_2qlgc"]
+[ext_resource type="Texture2D" uid="uid://c6pvvc4va2sax" path="res://assets/images/interior/wall/Stone2.png" id="2_y26kc"]
+[ext_resource type="PackedScene" uid="uid://dxixf7lgkucrm" path="res://assets/scenes/entities/items/alarm_potion.tscn" id="4_44c3r"]
+
+[node name="HouseInterior3" instance=ExtResource("1_7rgtx")]
+
+[node name="Wall" parent="." index="1"]
+texture = ExtResource("2_y26kc")
+
+[node name="olives" parent="." index="5" instance=ExtResource("2_2qlgc")]
+position = Vector2(721, 567)
+
+[node name="alarm potion" parent="." index="6" instance=ExtResource("4_44c3r")]
+position = Vector2(373, 529)
