@@ -42,10 +42,34 @@ func _on_enter_body_entered(body : PhysicsBody2D) -> void:
 		if body is PlayerClass:
 			if !opened:
 				if body.keys > 0:
-					body.keys -= 1
+					Globals.hud.confirm.connect(confirm_open)
+					Globals.hud.cancel.connect(cancel_open)
+					Globals.show_confirm()
 				else:
 					return
-			opened = true
-			Globals.current_house = data.id
-			go_to_house.emit(self,interior)
-		
+			else:
+				open_door_and_go()
+
+
+func confirm_open() -> void:
+	if Globals.player.keys > 0:
+		Globals.player.keys -= 1
+		open_door_and_go()
+	disconnect_hud()
+
+
+func disconnect_hud() -> void:
+	if Globals.hud.confirm.is_connected(confirm_open):
+		Globals.hud.confirm.disconnect(confirm_open)
+	if Globals.hud.cancel.is_connected(cancel_open):
+		Globals.hud.cancel.disconnect(cancel_open)
+
+
+func cancel_open() -> void:
+	disconnect_hud()
+
+
+func open_door_and_go() -> void:
+	opened = true
+	Globals.current_house = data.id
+	go_to_house.emit(self,interior)

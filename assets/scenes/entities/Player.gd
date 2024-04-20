@@ -7,7 +7,9 @@ signal died
 signal keys_changed
 
 const speed : int = 400
-		
+
+var controlled = true
+
 var max_health : int = 10:
 	set(new_max_health):
 		max_health = new_max_health
@@ -34,25 +36,32 @@ func _ready() -> void:
 	Globals.player = self
 
 
-func _physics_process(delta : float) -> void:
-	var direction = Input.get_vector("move_left","move_right","move_up","move_down")
-	velocity = direction * speed
-	
+func _physics_process(_delta : float) -> void:
+	if controlled:
+		var direction = Input.get_vector("move_left","move_right","move_up","move_down")
+		velocity = direction * speed
+		
 
-	if velocity.length() == 0:
-		$AnimatedSprite2D.stop()
-		$AnimatedSprite2D.frame = 1
+		if velocity.length() == 0:
+			stop_animation()
+		else:
+			if direction.x > 0:
+				$AnimatedSprite2D.play("move_right")
+				raycast.rotation_degrees = 270
+			elif direction.x < 0:
+				$AnimatedSprite2D.play("move_left")
+				raycast.rotation_degrees = 90
+			elif direction.y > 0:
+				$AnimatedSprite2D.play("move_down")
+				raycast.rotation_degrees = 0
+			elif direction.y < 0:
+				$AnimatedSprite2D.play("move_up")
+				raycast.rotation_degrees = 180
+		move_and_slide()
+		
 	else:
-		if direction.x > 0:
-			$AnimatedSprite2D.play("move_right")
-			raycast.rotation_degrees = 270
-		elif direction.x < 0:
-			$AnimatedSprite2D.play("move_left")
-			raycast.rotation_degrees = 90
-		elif direction.y > 0:
-			$AnimatedSprite2D.play("move_down")
-			raycast.rotation_degrees = 0
-		elif direction.y < 0:
-			$AnimatedSprite2D.play("move_up")
-			raycast.rotation_degrees = 180
-	move_and_slide()
+		stop_animation()
+		
+func stop_animation():
+	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.frame = 1

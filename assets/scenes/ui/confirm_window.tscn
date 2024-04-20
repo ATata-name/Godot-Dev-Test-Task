@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://x3fi3883bqm2"]
+
+[ext_resource type="Script" path="res://assets/scenes/ui/confirm_window.gd" id="1_wfd43"]
+
+[node name="ConfirmWindow" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wfd43")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 38
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Do you want to spend 1 key and open the door?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Yes" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Yes"
+
+[node name="No" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "No"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/No" to="." method="_on_no_pressed"]

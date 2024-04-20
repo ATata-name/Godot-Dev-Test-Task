@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3g7p80kgt2jv"]
+[gd_scene load_steps=3 format=3 uid="uid://d3g7p80kgt2jv"]
 
 [ext_resource type="Script" path="res://assets/scenes/ui/hud.gd" id="1_vjgnk"]
+[ext_resource type="PackedScene" uid="uid://x3fi3883bqm2" path="res://assets/scenes/ui/confirm_window.tscn" id="2_fir3s"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_vjgnk")
@@ -82,4 +83,9 @@ vertical_alignment = 1
 unique_name_in_owner = true
 one_shot = true
 
+[node name="ConfirmWindow" parent="Control" instance=ExtResource("2_fir3s")]
+layout_mode = 1
+
 [connection signal="timeout" from="Control/MessageControl/MessageTimer" to="." method="_on_message_timer_timeout"]
+[connection signal="No" from="Control/ConfirmWindow" to="." method="_on_confirm_window_no"]
+[connection signal="Yes" from="Control/ConfirmWindow" to="." method="_on_confirm_window_yes"]

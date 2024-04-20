@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+signal confirm
+signal cancel
+
 @export var player : PlayerClass
 @export var message_show_time : float = 5
 
@@ -33,3 +36,20 @@ func update_hp() -> void:
 
 func update_keys() -> void:
 	%Keys.text = "Keys: " + str(player.keys)
+
+
+func show_confirm() -> void:
+	Globals.player.controlled = false
+	$Control/ConfirmWindow.visible = true
+
+
+func _on_confirm_window_no():
+	cancel.emit()
+	Globals.player.controlled = true
+	$Control/ConfirmWindow.visible = false
+
+
+func _on_confirm_window_yes():
+	confirm.emit()
+	Globals.player.controlled = true
+	$Control/ConfirmWindow.visible = false

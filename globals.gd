@@ -37,3 +37,9 @@ func restart_game() -> void:
 func show_message(text : String) -> void:
 	if hud != null and hud.has_method("show_message"):
 		hud.show_message(text)
+
+
+func show_confirm() -> void:
+	if hud.has_method("show_confirm"):
+		return hud.show_confirm()
+

@@ -4,7 +4,7 @@ var interactable : bool = false
 @export var text = "text"
 
 
-func _process(delta) -> void:
+func _process(_delta) -> void:
 	if interactable:
 		if is_player_looking():
 			if Input.is_action_pressed("use"):

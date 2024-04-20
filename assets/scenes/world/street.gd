@@ -43,5 +43,5 @@ func connect_root(new_root : Node) -> void:
 	go_to_house.connect(street_go_to)
 
 
-func street_go_to(house : HouseClass, interior : PackedScene) -> void:
+func street_go_to(_house : HouseClass, interior : PackedScene) -> void:
 	root.load_level(interior)

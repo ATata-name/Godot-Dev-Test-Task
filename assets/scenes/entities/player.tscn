@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://b8280hv565pjk"]
 
-[ext_resource type="Script" path="res://assets/scenes/entities/Player.gd" id="1_mewdd"]
+[ext_resource type="Script" path="res://assets/scenes/entities/player.gd" id="1_ge0sx"]
 [ext_resource type="Texture2D" uid="uid://2ooylw0uwcjx" path="res://assets/images/People3.png" id="2_t5v1d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0i040"]
@@ -139,7 +139,7 @@ size = Vector2(36, 24)
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
-script = ExtResource("1_mewdd")
+script = ExtResource("1_ge0sx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
