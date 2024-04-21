@@ -1,17 +1,82 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2okgb7q5rpyv"]
+[gd_scene load_steps=16 format=3 uid="uid://c2okgb7q5rpyv"]
 
 [ext_resource type="PackedScene" uid="uid://dvb3aiu0wla63" path="res://assets/scenes/world/houses/interior/interior.tscn" id="1_7rgtx"]
 [ext_resource type="PackedScene" uid="uid://bgx0dw5jynaer" path="res://assets/scenes/entities/items/olives.tscn" id="2_2qlgc"]
-[ext_resource type="Texture2D" uid="uid://c6pvvc4va2sax" path="res://assets/images/interior/wall/Stone2.png" id="2_y26kc"]
+[ext_resource type="Texture2D" uid="uid://t607psvdq71o" path="res://assets/images/interior/wall/wall3.png" id="2_xwjtw"]
 [ext_resource type="PackedScene" uid="uid://dxixf7lgkucrm" path="res://assets/scenes/entities/items/alarm_potion.tscn" id="4_44c3r"]
+[ext_resource type="Texture2D" uid="uid://qo3lr7cdv0oi" path="res://assets/images/interior/Singles_48x48/Item_singles_1_48x48.png" id="5_fcxdx"]
+[ext_resource type="Texture2D" uid="uid://cdlm5lf0k1bq1" path="res://assets/images/interior/Singles_48x48/Item_singles_2_48x48.png" id="6_u05qa"]
+[ext_resource type="Texture2D" uid="uid://bk26oekwytc8h" path="res://assets/images/interior/Singles_48x48/Item_singles_11_48x48.png" id="7_ligkt"]
+[ext_resource type="Texture2D" uid="uid://cnoewvsr8lwax" path="res://assets/images/interior/Singles_48x48/Item_singles_14_48x48.png" id="8_ujq62"]
+[ext_resource type="Texture2D" uid="uid://fn2ocw2vjfkv" path="res://assets/images/interior/Singles_48x48/Item_singles_17_48x48.png" id="9_4ltcs"]
+[ext_resource type="Texture2D" uid="uid://be0r314dtvv5f" path="res://assets/images/interior/Singles_48x48/Item_singles_22_48x48.png" id="10_xe8us"]
+[ext_resource type="Texture2D" uid="uid://b2oebwkch4l5w" path="res://assets/images/interior/Singles_48x48/Item_singles_28_48x48.png" id="11_touta"]
+[ext_resource type="Texture2D" uid="uid://b5gsbnwa33nel" path="res://assets/images/interior/Singles_48x48/Item_singles_35_48x48.png" id="12_oqtje"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1xk5"]
+size = Vector2(139, 142)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2n0rt"]
+size = Vector2(116.5, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqcci"]
+size = Vector2(62.25, 57)
 
 [node name="HouseInterior3" instance=ExtResource("1_7rgtx")]
 
-[node name="Wall" parent="." index="1"]
-texture = ExtResource("2_y26kc")
+[node name="Wall" parent="." index="0"]
+texture = ExtResource("2_xwjtw")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" index="4"]
+position = Vector2(71.5, 77)
+shape = SubResource("RectangleShape2D_k1xk5")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" index="5"]
+position = Vector2(581.25, 44.5)
+shape = SubResource("RectangleShape2D_2n0rt")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" index="6"]
+position = Vector2(578, 312)
+shape = SubResource("RectangleShape2D_2n0rt")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" index="7"]
+position = Vector2(618, 452)
+shape = SubResource("RectangleShape2D_bqcci")
 
 [node name="olives" parent="." index="5" instance=ExtResource("2_2qlgc")]
-position = Vector2(721, 567)
+position = Vector2(242, 288)
 
 [node name="alarm potion" parent="." index="6" instance=ExtResource("4_44c3r")]
-position = Vector2(373, 529)
+position = Vector2(154, 289)
+
+[node name="ItemSingles148x48" type="Sprite2D" parent="." index="7"]
+position = Vector2(606, 1)
+texture = ExtResource("5_fcxdx")
+
+[node name="ItemSingles248x48" type="Sprite2D" parent="." index="8"]
+position = Vector2(553, 3)
+texture = ExtResource("6_u05qa")
+
+[node name="ItemSingles1148x48" type="Sprite2D" parent="." index="9"]
+position = Vector2(615, 453)
+texture = ExtResource("7_ligkt")
+
+[node name="ItemSingles1448x48" type="Sprite2D" parent="." index="10"]
+position = Vector2(579, 285)
+texture = ExtResource("8_ujq62")
+
+[node name="ItemSingles1748x48" type="Sprite2D" parent="." index="11"]
+position = Vector2(400, -59)
+texture = ExtResource("9_4ltcs")
+
+[node name="ItemSingles2248x48" type="Sprite2D" parent="." index="12"]
+position = Vector2(91, 54)
+texture = ExtResource("10_xe8us")
+
+[node name="ItemSingles2848x48" type="Sprite2D" parent="." index="13"]
+position = Vector2(91, 119)
+texture = ExtResource("11_touta")
+
+[node name="ItemSingles3548x48" type="Sprite2D" parent="." index="14"]
+position = Vector2(26, 23)
+texture = ExtResource("12_oqtje")

@@ -44,6 +44,6 @@ position = Vector2(63, 10)
 shape = SubResource("RectangleShape2D_78na2")
 
 [node name="Exit" type="Marker2D" parent="."]
-position = Vector2(60, 43)
+position = Vector2(62, 72)
 
 [connection signal="body_entered" from="Enter" to="." method="_on_enter_body_entered"]

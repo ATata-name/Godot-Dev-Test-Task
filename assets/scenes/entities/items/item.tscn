@@ -11,8 +11,8 @@ script = ExtResource("1_7ymyh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -7)
 texture = ExtResource("2_w74ae")
+offset = Vector2(0, -7)
 
 [node name="Area2D" type="Area2D" parent="."]
 

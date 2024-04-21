@@ -1,55 +1,60 @@
 [gd_scene load_steps=8 format=3 uid="uid://dvb3aiu0wla63"]
 
-[ext_resource type="Texture2D" uid="uid://cu42jum23mlv0" path="res://assets/images/interior/floor/Cobblestones3.png" id="1_lq2ru"]
 [ext_resource type="Script" path="res://assets/scenes/world/houses/interior/interior.gd" id="1_xlx5k"]
-[ext_resource type="Texture2D" uid="uid://cm4senqoo8iee" path="res://assets/images/interior/wall/Castle1.png" id="2_gwilv"]
+[ext_resource type="Texture2D" uid="uid://nhiutj424m6l" path="res://assets/images/interior/floor/floor2.png" id="2_2ggwq"]
+[ext_resource type="Texture2D" uid="uid://m711136vkylx" path="res://assets/images/interior/wall/wall1.png" id="3_8osai"]
 [ext_resource type="Texture2D" uid="uid://dasuy6hhv6a2r" path="res://icon.svg" id="3_mcrhj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbnjs"]
-size = Vector2(45, 750)
+size = Vector2(45, 475.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wptjf"]
-size = Vector2(1032, 50)
+size = Vector2(729, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn5ef"]
 size = Vector2(102, 42)
 
 [node name="Interior" type="Node2D"]
+y_sort_enabled = true
+texture_filter = 1
 script = ExtResource("1_xlx5k")
 
-[node name="Floor" type="Sprite2D" parent="."]
-texture = ExtResource("1_lq2ru")
+[node name="Wall" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -92)
+texture = ExtResource("3_8osai")
 centered = false
 
-[node name="Wall" type="Sprite2D" parent="."]
-texture = ExtResource("2_gwilv")
+[node name="Floor" type="Sprite2D" parent="."]
+texture = ExtResource("2_2ggwq")
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-15, 368)
+position = Vector2(-22, 243)
 shape = SubResource("RectangleShape2D_gbnjs")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1000, 368)
+position = Vector2(660, 238.25)
 shape = SubResource("RectangleShape2D_gbnjs")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(488, 298)
+position = Vector2(320, -19)
 shape = SubResource("RectangleShape2D_wptjf")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(505, 747)
+position = Vector2(318, 502)
 shape = SubResource("RectangleShape2D_wptjf")
 
 [node name="Enter" type="Marker2D" parent="."]
-position = Vector2(494, 626)
+position = Vector2(444, 390)
 
 [node name="Exit" type="Area2D" parent="."]
-position = Vector2(497, 701)
+position = Vector2(443, 459)
 
 [node name="Sprite2D" type="Sprite2D" parent="Exit"]
+modulate = Color(0, 0, 0, 1)
 scale = Vector2(0.875, 0.375)
 texture = ExtResource("3_mcrhj")
 

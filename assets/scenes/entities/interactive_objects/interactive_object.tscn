@@ -1,25 +1,26 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvg7japqaupbf"]
 
 [ext_resource type="Script" path="res://assets/scenes/entities/interactive_objects/interactive_object.gd" id="1_a76g1"]
-[ext_resource type="Texture2D" uid="uid://dasuy6hhv6a2r" path="res://icon.svg" id="2_tjijg"]
+[ext_resource type="Texture2D" uid="uid://bck211wvca5an" path="res://assets/images/sign.png" id="2_jpk18"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uo8b4"]
-size = Vector2(54, 42)
+size = Vector2(46, 52)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nbtea"]
 radius = 78.0577
 
 [node name="InteractiveObject" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_a76g1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -42)
-scale = Vector2(0.4375, 1)
-texture = ExtResource("2_tjijg")
+texture = ExtResource("2_jpk18")
+offset = Vector2(0, -16)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, -11)
 shape = SubResource("RectangleShape2D_uo8b4")
 
 [node name="Area2D" type="Area2D" parent="."]

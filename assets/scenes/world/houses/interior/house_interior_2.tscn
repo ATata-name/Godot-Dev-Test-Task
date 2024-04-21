@@ -1,23 +1,63 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0ypnhycbyycc"]
+[gd_scene load_steps=10 format=3 uid="uid://c0ypnhycbyycc"]
 
 [ext_resource type="PackedScene" uid="uid://dvb3aiu0wla63" path="res://assets/scenes/world/houses/interior/interior.tscn" id="1_thcsm"]
-[ext_resource type="Texture2D" uid="uid://bqp17sy76440f" path="res://assets/images/interior/floor/Cobblestones2.png" id="2_6fc55"]
-[ext_resource type="Texture2D" uid="uid://dkt8qsgyxklmo" path="res://assets/images/interior/wall/Tower.png" id="3_ha071"]
+[ext_resource type="Texture2D" uid="uid://bf4oos7xafmqn" path="res://assets/images/interior/floor/floor3.png" id="2_vobwg"]
+[ext_resource type="Texture2D" uid="uid://buqhxc08gt1yn" path="res://assets/images/interior/Singles_48x48/Item_singles_15_48x48.png" id="4_h75wg"]
 [ext_resource type="PackedScene" uid="uid://cffc1do05pjgl" path="res://assets/scenes/entities/items/key.tscn" id="4_l1hgv"]
+[ext_resource type="Texture2D" uid="uid://gkm1dg3gfu67" path="res://assets/images/interior/Singles_48x48/Item_singles_18_48x48.png" id="5_ira2b"]
+[ext_resource type="Texture2D" uid="uid://b75bswo5xf53i" path="res://assets/images/interior/Singles_48x48/Item_singles_27_48x48.png" id="6_7kt3i"]
+[ext_resource type="Texture2D" uid="uid://bgijsggkkq4t0" path="res://assets/images/interior/Singles_48x48/Item_singles_26_48x48.png" id="7_6eeco"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqdec"]
+size = Vector2(53, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_randy"]
+size = Vector2(108, 36)
 
 [node name="HouseInterior2" instance=ExtResource("1_thcsm")]
 
-[node name="Floor" parent="." index="0"]
-texture = ExtResource("2_6fc55")
+[node name="Floor" parent="." index="1"]
+texture = ExtResource("2_vobwg")
 
-[node name="Wall" parent="." index="1"]
-texture = ExtResource("3_ha071")
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" index="4"]
+position = Vector2(212.5, 151)
+shape = SubResource("RectangleShape2D_eqdec")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" index="5"]
+position = Vector2(379, 149)
+shape = SubResource("RectangleShape2D_eqdec")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" index="6"]
+position = Vector2(380, 50)
+shape = SubResource("RectangleShape2D_eqdec")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" index="7"]
+position = Vector2(292, 50)
+shape = SubResource("RectangleShape2D_randy")
 
 [node name="key" parent="." index="5" instance=ExtResource("4_l1hgv")]
-position = Vector2(172, 607)
+position = Vector2(136, 305)
 
 [node name="key2" parent="." index="6" instance=ExtResource("4_l1hgv")]
-position = Vector2(230, 556)
+position = Vector2(136, 254)
 
 [node name="key3" parent="." index="7" instance=ExtResource("4_l1hgv")]
-position = Vector2(317, 568)
+position = Vector2(136, 205)
+
+[node name="ItemSingles1548x48" type="Sprite2D" parent="." index="8"]
+position = Vector2(294, 31)
+texture = ExtResource("4_h75wg")
+
+[node name="ItemSingles1848x48" type="Sprite2D" parent="." index="9"]
+position = Vector2(381, 36)
+texture = ExtResource("5_ira2b")
+
+[node name="ItemSingles2748x48" type="Sprite2D" parent="." index="10"]
+position = Vector2(213, 165)
+texture = ExtResource("6_7kt3i")
+offset = Vector2(1, -47)
+
+[node name="ItemSingles2648x48" type="Sprite2D" parent="." index="11"]
+position = Vector2(379, 159)
+texture = ExtResource("7_6eeco")
+offset = Vector2(3, -42)
