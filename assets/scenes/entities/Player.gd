@@ -79,3 +79,11 @@ func stop_animation() -> void:
 func use(item_data : ItemData) -> void:
 	if item_data != null:
 		EffectSystem.activate(item_data.effect)
+
+
+func get_collision_shape_size() -> Vector2:
+	return $CollisionShape2D.shape.size
+	
+
+func get_collision_shape_position() -> Vector2:
+	return $CollisionShape2D.position

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://co75ler2p1g87"]
+[gd_scene load_steps=17 format=3 uid="uid://co75ler2p1g87"]
 
 [ext_resource type="Script" path="res://assets/scenes/world/street.gd" id="1_nc4fs"]
 [ext_resource type="PackedScene" uid="uid://dgqkcmnrmpnyb" path="res://assets/scenes/world/houses/house.tscn" id="2_aby4u"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c0ypnhycbyycc" path="res://assets/scenes/world/houses/interior/house_interior_2.tscn" id="12_3ruis"]
 [ext_resource type="PackedScene" uid="uid://c2okgb7q5rpyv" path="res://assets/scenes/world/houses/interior/house_interior_3.tscn" id="13_6aol7"]
 [ext_resource type="PackedScene" uid="uid://bvg7japqaupbf" path="res://assets/scenes/entities/interactive_objects/interactive_object.tscn" id="13_klm6b"]
+[ext_resource type="PackedScene" uid="uid://v0hs5sr1elf7" path="res://assets/scenes/entities/items/teleportation_potion.tscn" id="14_tvu57"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nity4"]
 size = Vector2(1202, 25)
@@ -120,3 +121,12 @@ text = "You can't interact with this object through the wall either"
 [node name="InteractiveObject4" parent="." instance=ExtResource("13_klm6b")]
 position = Vector2(214, 634)
 text = "You cannot interact with this object through a wall."
+
+[node name="TeleportationPotion" parent="." instance=ExtResource("14_tvu57")]
+position = Vector2(356, 1059)
+
+[node name="TeleportationPotion2" parent="." instance=ExtResource("14_tvu57")]
+position = Vector2(691, 1058)
+
+[node name="TeleportationPotion3" parent="." instance=ExtResource("14_tvu57")]
+position = Vector2(501, 1042)

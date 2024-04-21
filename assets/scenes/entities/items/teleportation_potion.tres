@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bkmalq7n5qbds"]
+
+[ext_resource type="Texture2D" uid="uid://madbscpndicw" path="res://assets/images/items/teleport_potion.png" id="1_d478v"]
+[ext_resource type="Script" path="res://assets/scenes/entities/items/item_data.gd" id="1_r3adr"]
+
+[resource]
+script = ExtResource("1_r3adr")
+name = "Teleportation potion"
+icon = ExtResource("1_d478v")
+description = "Description"
+effect = "Teleport p 500"

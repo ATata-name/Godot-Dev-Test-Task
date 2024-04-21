@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://v0hs5sr1elf7"]
+
+[ext_resource type="PackedScene" uid="uid://ghu4ooxvjrpt" path="res://assets/scenes/entities/items/item.tscn" id="1_cbc5p"]
+[ext_resource type="Resource" uid="uid://bkmalq7n5qbds" path="res://assets/scenes/entities/items/teleportation_potion.tres" id="2_2j73y"]
+[ext_resource type="Texture2D" uid="uid://madbscpndicw" path="res://assets/images/items/teleport_potion.png" id="3_eb8fy"]
+
+[node name="TeleportationPotion" instance=ExtResource("1_cbc5p")]
+item_data = ExtResource("2_2j73y")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_eb8fy")
