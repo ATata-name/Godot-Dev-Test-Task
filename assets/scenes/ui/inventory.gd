@@ -12,7 +12,7 @@ func _ready() -> void:
 	storage.button_changed.connect(on_button_signal)
 
 
-func on_button_signal(button : Button, state : String):
+func on_button_signal(button : Button, state : String) -> void:
 	match button.text:
 		"Use":
 			if state == "pressed":

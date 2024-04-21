@@ -24,7 +24,7 @@ func update_effects() -> void:
 		print("An error occurred when trying to access the path.")
 	
 
-func parse_args(args_string : Array):
+func parse_args(args_string : Array) -> Array:
 	var args : Array = []
 	var regex = RegEx.new()
 	regex.compile("\\d+")
