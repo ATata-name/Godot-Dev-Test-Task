@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://assets/scenes/world/street.gd" id="1_nc4fs"]
 [ext_resource type="PackedScene" uid="uid://dgqkcmnrmpnyb" path="res://assets/scenes/world/houses/house.tscn" id="2_aby4u"]
 [ext_resource type="Texture2D" uid="uid://dasuy6hhv6a2r" path="res://icon.svg" id="2_yurtn"]
-[ext_resource type="PackedScene" uid="uid://df05qs0uhlqoo" path="res://assets/scenes/world/houses/interior/house_interior_1.tscn" id="4_sj1hb"]
 [ext_resource type="PackedScene" uid="uid://fxyhkq3y1hoo" path="res://assets/scenes/entities/items/apple.tscn" id="5_24qga"]
 [ext_resource type="PackedScene" uid="uid://ds6ps4lnu43xy" path="res://assets/scenes/entities/items/orange.tscn" id="6_xntig"]
 [ext_resource type="PackedScene" uid="uid://cffc1do05pjgl" path="res://assets/scenes/entities/items/key.tscn" id="7_30wrn"]
@@ -11,9 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://bgx0dw5jynaer" path="res://assets/scenes/entities/items/olives.tscn" id="9_anfwm"]
 [ext_resource type="PackedScene" uid="uid://dxixf7lgkucrm" path="res://assets/scenes/entities/items/alarm_potion.tscn" id="10_7pg86"]
 [ext_resource type="PackedScene" uid="uid://c0ypnhycbyycc" path="res://assets/scenes/world/houses/interior/house_interior_2.tscn" id="12_3ruis"]
-[ext_resource type="PackedScene" uid="uid://c2okgb7q5rpyv" path="res://assets/scenes/world/houses/interior/house_interior_3.tscn" id="13_6aol7"]
+[ext_resource type="PackedScene" uid="uid://cwlw6hyub31f5" path="res://assets/scenes/world/houses/exterior/house1.tscn" id="13_kefy0"]
 [ext_resource type="PackedScene" uid="uid://bvg7japqaupbf" path="res://assets/scenes/entities/interactive_objects/interactive_object.tscn" id="13_klm6b"]
 [ext_resource type="PackedScene" uid="uid://v0hs5sr1elf7" path="res://assets/scenes/entities/items/teleportation_potion.tscn" id="14_tvu57"]
+[ext_resource type="PackedScene" uid="uid://crsm30wou282n" path="res://assets/scenes/world/houses/exterior/house3.tscn" id="14_vlg0k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nity4"]
 size = Vector2(1202, 25)
@@ -49,11 +49,6 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_nity4")
 metadata/_edit_lock_ = true
 
-[node name="House" parent="." instance=ExtResource("2_aby4u")]
-modulate = Color(1, 0.22195, 0.600771, 1)
-position = Vector2(305, 362)
-interior = ExtResource("4_sj1hb")
-
 [node name="Item2" parent="." instance=ExtResource("5_24qga")]
 position = Vector2(405, 529)
 
@@ -84,11 +79,6 @@ position = Vector2(533, 629)
 [node name="House2" parent="." instance=ExtResource("2_aby4u")]
 position = Vector2(625, 362)
 interior = ExtResource("12_3ruis")
-
-[node name="House3" parent="." instance=ExtResource("2_aby4u")]
-position = Vector2(943, 362)
-interior = ExtResource("13_6aol7")
-opened = true
 
 [node name="House4" parent="." instance=ExtResource("2_aby4u")]
 position = Vector2(950, 778)
@@ -130,3 +120,9 @@ position = Vector2(691, 1058)
 
 [node name="TeleportationPotion3" parent="." instance=ExtResource("14_tvu57")]
 position = Vector2(501, 1042)
+
+[node name="House" parent="." instance=ExtResource("13_kefy0")]
+position = Vector2(302, 366)
+
+[node name="House3" parent="." instance=ExtResource("14_vlg0k")]
+position = Vector2(943, 360)

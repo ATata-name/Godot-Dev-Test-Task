@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwlw6hyub31f5"]
+
+[ext_resource type="PackedScene" uid="uid://dgqkcmnrmpnyb" path="res://assets/scenes/world/houses/house.tscn" id="1_gy8s7"]
+[ext_resource type="Texture2D" uid="uid://baet2xvqhj2e3" path="res://assets/images/houses.png" id="2_e8y6h"]
+[ext_resource type="PackedScene" uid="uid://df05qs0uhlqoo" path="res://assets/scenes/world/houses/interior/house_interior_1.tscn" id="2_nkgn6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2nyo"]
+atlas = ExtResource("2_e8y6h")
+region = Rect2(148, 0, 70, 80)
+
+[node name="House" instance=ExtResource("1_gy8s7")]
+interior = ExtResource("2_nkgn6")
+
+[node name="Exterior" parent="." index="0"]
+texture = SubResource("AtlasTexture_q2nyo")

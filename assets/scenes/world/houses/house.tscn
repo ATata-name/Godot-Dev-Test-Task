@@ -1,40 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgqkcmnrmpnyb"]
+[gd_scene load_steps=7 format=3 uid="uid://dgqkcmnrmpnyb"]
 
 [ext_resource type="Script" path="res://assets/scenes/world/houses/house.gd" id="1_edyqh"]
-[ext_resource type="Texture2D" uid="uid://dasuy6hhv6a2r" path="res://icon.svg" id="1_ymive"]
+[ext_resource type="Texture2D" uid="uid://baet2xvqhj2e3" path="res://assets/images/houses.png" id="2_iknei"]
+[ext_resource type="Texture2D" uid="uid://cy3qdujl50jbq" path="res://assets/images/doors.png" id="3_87xik"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5gd8"]
+atlas = ExtResource("2_iknei")
+region = Rect2(2, 0, 70, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0quxd"]
-size = Vector2(310, 137)
+size = Vector2(242, 195)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78na2"]
-size = Vector2(40, 20)
+size = Vector2(60, 20)
 
 [node name="House" type="Node2D"]
 script = ExtResource("1_edyqh")
 
 [node name="Exterior" type="Sprite2D" parent="."]
-position = Vector2(0, -92.25)
-scale = Vector2(2.42187, 1.43359)
-texture = ExtResource("1_ymive")
+texture_filter = 1
+position = Vector2(0, -136)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_h5gd8")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -68.5)
+position = Vector2(0, -97.5)
 shape = SubResource("RectangleShape2D_0quxd")
 
 [node name="Door" type="Sprite2D" parent="."]
-position = Vector2(0, -26)
-scale = Vector2(0.359375, 0.398438)
-texture = ExtResource("1_ymive")
+texture_filter = 1
+position = Vector2(62, -40)
+scale = Vector2(4, 4)
+texture = ExtResource("3_87xik")
+hframes = 2
+frame = 1
 
 [node name="Enter" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enter"]
-position = Vector2(0, 10)
+position = Vector2(63, 10)
 shape = SubResource("RectangleShape2D_78na2")
 
 [node name="Exit" type="Marker2D" parent="."]
-position = Vector2(0, 43)
+position = Vector2(60, 43)
 
 [connection signal="body_entered" from="Enter" to="." method="_on_enter_body_entered"]

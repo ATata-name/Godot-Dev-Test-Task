@@ -18,12 +18,12 @@ var data : HouseData = HouseData.new()
 
 
 func open() -> void:
-	$Door.modulate = Color.BLACK
+	$Door.frame = 0
 	upadate_data()
 
 
 func close() -> void:
-	$Door.modulate = Color.WHITE
+	$Door.frame = 1
 	upadate_data()
 
 
