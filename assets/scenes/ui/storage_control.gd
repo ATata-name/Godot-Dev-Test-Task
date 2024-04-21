@@ -124,4 +124,6 @@ func get_current_selected() -> ItemData:
 
 
 func use_current_selected() -> ItemData:
-	return storage.use_item(selected)
+	var item : ItemData = storage.use_item(selected)
+	update_data()
+	return item
