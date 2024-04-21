@@ -5,3 +5,4 @@ class_name ItemData
 @export var icon : Texture2D
 @export_multiline var description : String = "Description"
 @export_multiline var effect : String = ""
+@export var consumable : bool = true

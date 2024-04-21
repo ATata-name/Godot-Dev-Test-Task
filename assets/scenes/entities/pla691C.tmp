@@ -143,18 +143,17 @@ script = ExtResource("1_ge0sx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_x4vc2")
 animation = &"move_down"
 offset = Vector2(0, -24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_esbef")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, -21)
+position = Vector2(0, -23)
 target_position = Vector2(0, 80)

@@ -41,3 +41,4 @@ func activate(arguments : Array) -> void:
 			else:
 				player.position += mod + collision_offset
 			raycast.queue_free()
+			player.move_and_slide()

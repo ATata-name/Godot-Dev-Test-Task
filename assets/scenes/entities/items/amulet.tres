@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cwiwce4rhl2vq"]
+
+[ext_resource type="Texture2D" uid="uid://be4dihfdup0wf" path="res://assets/images/items/amulet.png" id="1_sb4wm"]
+[ext_resource type="Script" path="res://assets/scenes/entities/items/item_data.gd" id="2_n1do5"]
+
+[resource]
+script = ExtResource("2_n1do5")
+name = "Amulet"
+icon = ExtResource("1_sb4wm")
+description = "Reduces the user's health by 9, increases the user's maximum health by 1. Not consumed using."
+effect = "Damage p 9
+AddMaxHealth p 1"
+consumable = false

@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxsmxpb1jj6cj"]
+
+[ext_resource type="PackedScene" uid="uid://ghu4ooxvjrpt" path="res://assets/scenes/entities/items/item.tscn" id="1_ultte"]
+[ext_resource type="Resource" uid="uid://cwiwce4rhl2vq" path="res://assets/scenes/entities/items/amulet.tres" id="2_f604b"]
+[ext_resource type="Texture2D" uid="uid://be4dihfdup0wf" path="res://assets/images/items/amulet.png" id="3_xrfwy"]
+
+[node name="amulet" instance=ExtResource("1_ultte")]
+item_data = ExtResource("2_f604b")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_xrfwy")

@@ -11,11 +11,6 @@ var index = -1
 func _on_area_2d_body_entered(body : PhysicsBody2D) -> void:
 	if body is PlayerClass:
 		pickup_item()
-		#use(body)
-
-
-#func use(player : PlayerClass) -> void:
-	#player.use(item_data)
 
 
 func pickup_item():

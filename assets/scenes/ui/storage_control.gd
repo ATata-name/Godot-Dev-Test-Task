@@ -61,8 +61,8 @@ func disable_buttons() -> void:
 
 
 func unselect_all_cells() -> void:
-	for cell in grid.get_children():
-		cell.unselect()
+	for cell_child in grid.get_children():
+		cell_child.unselect()
 	disable_buttons()
 
 
@@ -134,7 +134,7 @@ func use_current_selected() -> ItemData:
 	return item
 
 
-func _on_visibility_changed():
+func _on_visibility_changed() -> void:
 	if visible:
 		selected = -1
 		cell_selected(selected)

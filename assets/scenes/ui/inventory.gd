@@ -16,7 +16,12 @@ func on_button_signal(button : Button, state : String) -> void:
 	match button.text:
 		"Use":
 			if state == "pressed":
-				var item : ItemData = storage.use_current_selected()
+				var item : ItemData = storage.get_current_selected()
+				if item.consumable:
+					item = storage.use_current_selected()
+				
 				Globals.player.use(item)
 		"Drop":
-			pass
+			if state == "pressed":
+				var item : ItemData = storage.use_current_selected()
+
