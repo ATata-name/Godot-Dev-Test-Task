@@ -43,9 +43,9 @@ func prepare_cells() -> void:
 			c.index = i
 			grid.add_child(c)
 			c.selected.connect(cell_selected)
-
-	disable_buttons()
-	update_data()
+	
+	update()
+	
 
 
 func enable_buttons() -> void:
@@ -60,13 +60,21 @@ func disable_buttons() -> void:
 			child.disabled = true
 
 
+func unselect_all_cells() -> void:
+	for cell in grid.get_children():
+		cell.unselect()
+	disable_buttons()
+
+
 func cell_selected(index : int) -> void:
-	if selected != -1:
-		disable_buttons()
-		grid.get_child(selected).unselect()
+	
+	unselect_all_cells()
+		
 	selected = index
-	var selected_cell = grid.get_child(selected)
-	selected_cell.select()
+	if selected != -1:
+		var selected_cell = grid.get_child(selected)
+		selected_cell.select()
+	
 	if storage.get_item(selected) != null:
 		enable_buttons()
 	else:
@@ -82,9 +90,11 @@ func update_data() -> void:
 			set_text(item_data.name,item_data.description)
 		else:
 			set_empty_text()
-		update()
+			disable_buttons()
 	else:
 		set_empty_text()
+		disable_buttons()
+	
 
 
 func set_text(new_name : String, new_description : String) -> void:
@@ -96,17 +106,12 @@ func set_empty_text() -> void:
 	set_text("Empty", "Empty cell")
 
 
-func check_current_selected():
-	if storage.get_item(selected) == null:
-		disable_buttons()
-		set_empty_text()
-
-
 func update() -> void:
 	if storage != null:
 		for i in range(storage.size):
 			(grid.get_child(i)).set_item(storage.get_item(i))
-	check_current_selected()
+	
+	update_data()
 
 
 func add_button(button : Button) -> void:
@@ -114,7 +119,7 @@ func add_button(button : Button) -> void:
 	button.pressed.connect(func (): button_changed.emit(button,"pressed"))
 
 
-func clear_buttons():
+func clear_buttons() -> void:
 	for child in buttons.get_children():
 		child.queue_free()
 
@@ -127,3 +132,9 @@ func use_current_selected() -> ItemData:
 	var item : ItemData = storage.use_item(selected)
 	update_data()
 	return item
+
+
+func _on_visibility_changed():
+	if visible:
+		selected = -1
+		cell_selected(selected)
