@@ -1,11 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://c88aoln4fc5tv"]
+[gd_scene load_steps=5 format=3 uid="uid://c88aoln4fc5tv"]
 
 [ext_resource type="PackedScene" uid="uid://ghu4ooxvjrpt" path="res://assets/scenes/entities/items/item.tscn" id="1_cvtjh"]
-[ext_resource type="Script" path="res://assets/scenes/entities/items/chili.gd" id="2_yemc2"]
+[ext_resource type="Resource" uid="uid://bp1yva0q3mcw1" path="res://assets/scenes/entities/items/chili.tres" id="2_8tcxj"]
 [ext_resource type="Texture2D" uid="uid://c1x3qsbp58es0" path="res://assets/images/items/chili.png" id="3_0mf8c"]
 
+[sub_resource type="GDScript" id="GDScript_a4ctn"]
+script/source = "extends ItemClass
+
+
+func use(player : PlayerClass) -> void:
+	player.health -= 1
+
+"
+
 [node name="chili" instance=ExtResource("1_cvtjh")]
-script = ExtResource("2_yemc2")
+script = SubResource("GDScript_a4ctn")
+item_data = ExtResource("2_8tcxj")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_0mf8c")

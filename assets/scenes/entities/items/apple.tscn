@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://fxyhkq3y1hoo"]
 
 [ext_resource type="PackedScene" uid="uid://ghu4ooxvjrpt" path="res://assets/scenes/entities/items/item.tscn" id="1_3ndkm"]
-[ext_resource type="Script" path="res://assets/scenes/entities/items/apple.gd" id="2_lc1xg"]
+[ext_resource type="Resource" uid="uid://c0ar6v3cp216l" path="res://assets/scenes/entities/items/apple.tres" id="2_mrat5"]
 [ext_resource type="Texture2D" uid="uid://b6ixv3be8fk6f" path="res://assets/images/items/apple.png" id="3_qejsb"]
 
 [node name="apple" instance=ExtResource("1_3ndkm")]
-script = ExtResource("2_lc1xg")
+item_data = ExtResource("2_mrat5")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_qejsb")

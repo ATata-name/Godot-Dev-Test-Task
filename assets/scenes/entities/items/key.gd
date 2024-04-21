@@ -1,5 +1,7 @@
 extends ItemClass
 
 
-func use(player : PlayerClass) -> void:
-	player.keys += 1
+func pickup_item() -> void:
+	Globals.player.keys += 1
+	collected.emit(index)
+	queue_free()

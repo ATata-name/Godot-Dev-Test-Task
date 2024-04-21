@@ -18,6 +18,7 @@ func is_player_looking() -> bool:
 			return true
 	return false
 
+
 func _on_area_2d_body_entered(body : PhysicsBody2D) -> void:
 	if body is PlayerClass:
 		interactable = true

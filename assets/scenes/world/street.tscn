@@ -1,10 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://co75ler2p1g87"]
+[gd_scene load_steps=16 format=3 uid="uid://co75ler2p1g87"]
 
 [ext_resource type="Script" path="res://assets/scenes/world/street.gd" id="1_nc4fs"]
 [ext_resource type="PackedScene" uid="uid://dgqkcmnrmpnyb" path="res://assets/scenes/world/houses/house.tscn" id="2_aby4u"]
 [ext_resource type="Texture2D" uid="uid://dasuy6hhv6a2r" path="res://icon.svg" id="2_yurtn"]
 [ext_resource type="PackedScene" uid="uid://df05qs0uhlqoo" path="res://assets/scenes/world/houses/interior/house_interior_1.tscn" id="4_sj1hb"]
-[ext_resource type="PackedScene" uid="uid://ghu4ooxvjrpt" path="res://assets/scenes/entities/items/item.tscn" id="4_stfjq"]
 [ext_resource type="PackedScene" uid="uid://fxyhkq3y1hoo" path="res://assets/scenes/entities/items/apple.tscn" id="5_24qga"]
 [ext_resource type="PackedScene" uid="uid://ds6ps4lnu43xy" path="res://assets/scenes/entities/items/orange.tscn" id="6_xntig"]
 [ext_resource type="PackedScene" uid="uid://cffc1do05pjgl" path="res://assets/scenes/entities/items/key.tscn" id="7_30wrn"]
@@ -53,9 +52,6 @@ metadata/_edit_lock_ = true
 modulate = Color(1, 0.22195, 0.600771, 1)
 position = Vector2(305, 362)
 interior = ExtResource("4_sj1hb")
-
-[node name="Item" parent="." instance=ExtResource("4_stfjq")]
-position = Vector2(498, 534)
 
 [node name="Item2" parent="." instance=ExtResource("5_24qga")]
 position = Vector2(405, 529)

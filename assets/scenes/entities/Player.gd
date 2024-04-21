@@ -31,9 +31,17 @@ var keys : int = 0:
 
 @onready var raycast : RayCast2D = %RayCast2D
 
+var inventory : StorageClass = StorageClass.new()
+
+
 func _ready() -> void:
 	health = max_health
 	Globals.player = self
+
+
+func _input(event : InputEvent) -> void:
+	if event.is_action_pressed("ui_inventory"):
+		Globals.show_inventory()
 
 
 func _physics_process(_delta : float) -> void:
@@ -61,7 +69,13 @@ func _physics_process(_delta : float) -> void:
 		
 	else:
 		stop_animation()
-		
-func stop_animation():
+
+
+func stop_animation() -> void:
 	$AnimatedSprite2D.stop()
 	$AnimatedSprite2D.frame = 1
+
+
+func use(item_data : ItemData) -> void:
+	if item_data != null:
+		EffectSystem.activate(item_data.effect)

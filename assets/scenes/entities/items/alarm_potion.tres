@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://b8kjytghptsdu"]
+
+[ext_resource type="Texture2D" uid="uid://tlkg5f45nn62" path="res://assets/images/items/alarm_potion.png" id="1_38054"]
+[ext_resource type="Script" path="res://assets/scenes/entities/items/item_data.gd" id="1_uvp0x"]
+
+[resource]
+script = ExtResource("1_uvp0x")
+name = "Alarm Potion"
+icon = ExtResource("1_38054")
+description = "Locks all open houses on the street."
+effect = "Alarm"

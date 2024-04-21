@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://3dgvtuysx7fe"]
+
+[ext_resource type="Texture2D" uid="uid://cgp7x6hy5elex" path="res://assets/images/items/orange.png" id="1_nl7je"]
+[ext_resource type="Script" path="res://assets/scenes/entities/items/item_data.gd" id="1_skuck"]
+
+[resource]
+script = ExtResource("1_skuck")
+name = "Orange"
+icon = ExtResource("1_nl7je")
+description = "Increases the player's maximum health by 1, increases the player's health by 1"
+effect = "AddMaxHealth p 1
+AddHealth p 1"

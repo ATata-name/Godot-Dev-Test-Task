@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bp1yva0q3mcw1"]
+
+[ext_resource type="Script" path="res://assets/scenes/entities/items/item_data.gd" id="1_4wxc2"]
+[ext_resource type="Texture2D" uid="uid://c1x3qsbp58es0" path="res://assets/images/items/chili.png" id="1_wv7hr"]
+
+[resource]
+script = ExtResource("1_4wxc2")
+name = "Chili"
+icon = ExtResource("1_wv7hr")
+description = "The user's health is reduced by 1."
+effect = "Damage p 1"

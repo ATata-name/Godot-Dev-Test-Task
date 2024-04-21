@@ -1,0 +1,111 @@
+[gd_scene load_steps=3 format=3 uid="uid://dko2pwh5i70j2"]
+
+[ext_resource type="Script" path="res://assets/scenes/ui/inventory_control.gd" id="1_pei3y"]
+[ext_resource type="PackedScene" uid="uid://cqwh4bs8n1e2d" path="res://assets/scenes/ui/cell.tscn" id="2_g8x4n"]
+
+[node name="Sorage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pei3y")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+columns = 8
+
+[node name="Cell" parent="CenterContainer/VBoxContainer/GridContainer" instance=ExtResource("2_g8x4n")]
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Panel3" type="Panel" parent="CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Panel4" type="Panel" parent="CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Panel5" type="Panel" parent="CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Panel6" type="Panel" parent="CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Panel7" type="Panel" parent="CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Panel8" type="Panel" parent="CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Panel9" type="Panel" parent="CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Panel10" type="Panel" parent="CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Panel11" type="Panel" parent="CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(450, 120)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="CenterContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Name"
+
+[node name="Description" type="Label" parent="CenterContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Description"
+autowrap_mode = 3
+
+[node name="buttons" type="VBoxContainer" parent="CenterContainer/VBoxContainer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer/Panel/HBoxContainer/buttons"]
+layout_mode = 2
+text = "Use"
+
+[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer/Panel/HBoxContainer/buttons"]
+layout_mode = 2
+text = "Drop"

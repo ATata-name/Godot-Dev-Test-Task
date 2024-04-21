@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_n5ibc"]
 radius = 12.0
 
-[node name="Item" type="Area2D"]
+[node name="Item" type="Node2D"]
 script = ExtResource("1_7ymyh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -14,8 +14,10 @@ texture_filter = 1
 position = Vector2(0, -7)
 texture = ExtResource("2_w74ae")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_n5ibc")
 metadata/_edit_lock_ = true
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

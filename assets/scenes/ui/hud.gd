@@ -41,15 +41,23 @@ func update_keys() -> void:
 func show_confirm() -> void:
 	Globals.player.controlled = false
 	$Control/ConfirmWindow.visible = true
+	$Control/Inventory.visible = false
+	
 
-
-func _on_confirm_window_no():
+func _on_confirm_window_no() -> void:
 	cancel.emit()
 	Globals.player.controlled = true
 	$Control/ConfirmWindow.visible = false
 
 
-func _on_confirm_window_yes():
+func _on_confirm_window_yes() -> void:
 	confirm.emit()
 	Globals.player.controlled = true
 	$Control/ConfirmWindow.visible = false
+
+
+func show_inventory() -> void:
+	if !$Control/ConfirmWindow.visible:
+		$Control/Inventory.visible = !$Control/Inventory.visible
+		Globals.player.controlled = !$Control/Inventory.visible
+	

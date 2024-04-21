@@ -41,5 +41,9 @@ func show_message(text : String) -> void:
 
 func show_confirm() -> void:
 	if hud.has_method("show_confirm"):
-		return hud.show_confirm()
+		hud.show_confirm()
 
+
+func show_inventory() -> void:
+	if hud.has_method("show_inventory"):
+		hud.show_inventory()

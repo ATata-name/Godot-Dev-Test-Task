@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c0ar6v3cp216l"]
+
+[ext_resource type="Texture2D" uid="uid://b6ixv3be8fk6f" path="res://assets/images/items/apple.png" id="1_5e3qw"]
+[ext_resource type="Script" path="res://assets/scenes/entities/items/item_data.gd" id="1_ldy1s"]
+
+[resource]
+script = ExtResource("1_ldy1s")
+name = "Apple"
+description = "Increases the player's health by 1"
+icon = ExtResource("1_5e3qw")
+effect = "AddHealth p +1"

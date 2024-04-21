@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://6t2xwgodmw0s"]
+
+[ext_resource type="Script" path="res://assets/scenes/entities/items/item_data.gd" id="1_ebv1n"]
+[ext_resource type="Texture2D" uid="uid://50l0rvlsut22" path="res://assets/images/items/olives.png" id="1_xmy1x"]
+
+[resource]
+script = ExtResource("1_ebv1n")
+name = "Olives"
+icon = ExtResource("1_xmy1x")
+description = "Reduces the player's maximum health by 10."
+effect = "Damage p 10"

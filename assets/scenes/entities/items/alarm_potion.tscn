@@ -1,40 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxixf7lgkucrm"]
+[gd_scene load_steps=4 format=3 uid="uid://dxixf7lgkucrm"]
 
 [ext_resource type="PackedScene" uid="uid://ghu4ooxvjrpt" path="res://assets/scenes/entities/items/item.tscn" id="1_rx7bj"]
-[ext_resource type="Script" path="res://assets/scenes/entities/items/alarm potion.gd" id="2_vkqrs"]
+[ext_resource type="Resource" uid="uid://b8kjytghptsdu" path="res://assets/scenes/entities/items/alarm_potion.tres" id="2_8e267"]
 [ext_resource type="Texture2D" uid="uid://tlkg5f45nn62" path="res://assets/images/items/alarm_potion.png" id="3_d5ey3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m8v7d"]
-atlas = ExtResource("3_d5ey3")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v5qv6"]
-atlas = ExtResource("3_d5ey3")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_58k8e"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m8v7d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v5qv6")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 2.0
-}]
-
 [node name="alarm potion" instance=ExtResource("1_rx7bj")]
-script = ExtResource("2_vkqrs")
+item_data = ExtResource("2_8e267")
 
 [node name="Sprite2D" parent="." index="0"]
-visible = false
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_58k8e")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.583536
+texture = ExtResource("3_d5ey3")
