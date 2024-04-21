@@ -45,7 +45,6 @@ func prepare_cells() -> void:
 			c.selected.connect(cell_selected)
 	
 	update()
-	
 
 
 func enable_buttons() -> void:
@@ -94,7 +93,6 @@ func update_data() -> void:
 	else:
 		set_empty_text()
 		disable_buttons()
-	
 
 
 func set_text(new_name : String, new_description : String) -> void:

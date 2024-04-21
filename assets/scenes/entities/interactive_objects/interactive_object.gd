@@ -6,7 +6,7 @@ var interactable : bool = false
 
 func _process(_delta) -> void:
 	if interactable:
-		if is_player_looking():
+		if is_player_looking() and Globals.player.controlled:
 			if Input.is_action_pressed("use"):
 				Globals.show_message(text)
 
