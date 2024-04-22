@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://co75ler2p1g87"]
+[gd_scene load_steps=22 format=3 uid="uid://co75ler2p1g87"]
 
 [ext_resource type="Script" path="res://assets/scenes/world/street.gd" id="1_nc4fs"]
 [ext_resource type="PackedScene" uid="uid://dgqkcmnrmpnyb" path="res://assets/scenes/world/houses/house.tscn" id="2_aby4u"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://v0hs5sr1elf7" path="res://assets/scenes/entities/items/teleportation_potion.tscn" id="14_tvu57"]
 [ext_resource type="PackedScene" uid="uid://crsm30wou282n" path="res://assets/scenes/world/houses/exterior/house3.tscn" id="14_vlg0k"]
 [ext_resource type="PackedScene" uid="uid://dxsmxpb1jj6cj" path="res://assets/scenes/entities/items/amulet.tscn" id="16_1y7oj"]
+[ext_resource type="PackedScene" uid="uid://cneixuyjvxn6o" path="res://assets/scenes/entities/items/token.tscn" id="17_xjjio"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ujamf"]
 texture = ExtResource("2_n1g52")
@@ -539,3 +540,6 @@ position = Vector2(936, 1121)
 
 [node name="apple10" parent="." instance=ExtResource("5_24qga")]
 position = Vector2(1005, 1119)
+
+[node name="token2" parent="." instance=ExtResource("17_xjjio")]
+position = Vector2(392, 950)

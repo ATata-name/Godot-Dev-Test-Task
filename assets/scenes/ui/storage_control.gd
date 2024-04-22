@@ -1,4 +1,5 @@
 extends Control
+class_name StorageControlClass
 
 signal  button_changed(button : Button, state : String)
 

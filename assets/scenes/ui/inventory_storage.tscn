@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://w0v2xtmjwpr3"]
+
+[ext_resource type="PackedScene" uid="uid://dko2pwh5i70j2" path="res://assets/scenes/ui/storage.tscn" id="1_r6abe"]
+[ext_resource type="Script" path="res://assets/scenes/ui/inventory_storage.gd" id="2_qykka"]
+
+[node name="Inventory" instance=ExtResource("1_r6abe")]
+script = ExtResource("2_qykka")
+
+[node name="Use" type="Button" parent="CenterContainer/VBoxContainer/Panel/HBoxContainer/buttons" index="0"]
+layout_mode = 2
+text = "Use"
+
+[node name="Drop" type="Button" parent="CenterContainer/VBoxContainer/Panel/HBoxContainer/buttons" index="1"]
+layout_mode = 2
+text = "Drop"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Panel/HBoxContainer/buttons/Use" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Panel/HBoxContainer/buttons/Drop" to="." method="_on_drop_pressed"]

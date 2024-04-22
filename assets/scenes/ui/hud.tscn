@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/scenes/ui/hud.gd" id="1_vjgnk"]
 [ext_resource type="PackedScene" uid="uid://x3fi3883bqm2" path="res://assets/scenes/ui/confirm_window.tscn" id="2_fir3s"]
-[ext_resource type="PackedScene" uid="uid://dc6wbqgjxjhgg" path="res://assets/scenes/ui/inventory.tscn" id="3_2t4uh"]
+[ext_resource type="PackedScene" uid="uid://w0v2xtmjwpr3" path="res://assets/scenes/ui/inventory_storage.tscn" id="3_ype10"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_vjgnk")
@@ -88,7 +88,8 @@ one_shot = true
 visible = false
 layout_mode = 1
 
-[node name="Inventory" parent="Control" instance=ExtResource("3_2t4uh")]
+[node name="Inventory" parent="Control" instance=ExtResource("3_ype10")]
+visible = false
 layout_mode = 1
 
 [connection signal="timeout" from="Control/MessageControl/MessageTimer" to="." method="_on_message_timer_timeout"]

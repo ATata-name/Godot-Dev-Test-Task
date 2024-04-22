@@ -13,7 +13,7 @@ func _on_area_2d_body_entered(body : PhysicsBody2D) -> void:
 		pickup_item()
 
 
-func pickup_item():
+func pickup_item() -> void:
 	if !Globals.player.inventory.is_full():
 		Globals.player.inventory.add(item_data)
 		collected.emit(index)

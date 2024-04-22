@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cneixuyjvxn6o"]
+
+[ext_resource type="PackedScene" uid="uid://ghu4ooxvjrpt" path="res://assets/scenes/entities/items/item.tscn" id="1_7qxo3"]
+[ext_resource type="Texture2D" uid="uid://d8fj5a3a3jb4" path="res://assets/images/items/14.png" id="2_2tqjd"]
+[ext_resource type="Script" path="res://assets/scenes/entities/items/item_data.gd" id="3_vqcki"]
+
+[sub_resource type="Resource" id="Resource_gb3n5"]
+script = ExtResource("3_vqcki")
+name = "Token 14"
+icon = ExtResource("2_2tqjd")
+description = "A round piece of metal with the number 14 on it. Cannot be used"
+effect = ""
+consumable = false
+
+[node name="token" instance=ExtResource("1_7qxo3")]
+item_data = SubResource("Resource_gb3n5")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_2tqjd")
