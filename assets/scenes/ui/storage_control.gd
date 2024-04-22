@@ -68,6 +68,9 @@ func unselect_all_cells() -> void:
 
 func cell_selected(index : int) -> void:
 	
+	if storage == null:
+		return
+	
 	unselect_all_cells()
 		
 	selected = index
@@ -110,7 +113,8 @@ func update() -> void:
 		for i in range(storage.size):
 			(grid.get_child(i)).set_item(storage.get_item(i))
 	
-	update_data()
+	cell_selected(selected)
+	#update_data()
 
 
 func add_button(button : Button) -> void:
@@ -124,6 +128,8 @@ func clear_buttons() -> void:
 
 
 func get_current_selected() -> ItemData:
+	if storage == null:
+		return null
 	return storage.get_item(selected)
 
 

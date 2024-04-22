@@ -2,6 +2,7 @@ extends Node
 
 signal update_houses
 signal restart
+signal added_item(item : ItemClass)
 
 var player : PlayerClass:
 	set(value):
@@ -12,7 +13,7 @@ var hud : Node
 var current_house : int = -1
 var houses : Dictionary = {}
 var levels : Dictionary = {}
-var current_level_name = ""
+var current_level_name : String = ""
 
 
 func collect(item_index : int) -> void:
@@ -47,3 +48,7 @@ func show_confirm() -> void:
 func show_inventory() -> void:
 	if hud.has_method("show_inventory"):
 		hud.show_inventory()
+
+
+func add_item(item : ItemClass) -> void:
+	added_item.emit(item)

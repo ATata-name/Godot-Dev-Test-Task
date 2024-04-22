@@ -3,14 +3,29 @@ class_name ItemClass
 
 signal collected(index)
 
-@export var item_data : ItemData = ItemData.new()
+@export var item_data : ItemData = ItemData.new():
+	set(value):
+		item_data = value
+		update_icon()
 
 var index = -1
+var droped = false
+
+func _ready() -> void:
+	update_icon()
+
+
+func update_icon() -> void:
+	if item_data != null and item_data.icon != null:
+		$Sprite2D.texture = item_data.icon
 
 
 func _on_area_2d_body_entered(body : PhysicsBody2D) -> void:
 	if body is PlayerClass:
-		pickup_item()
+		if !droped:
+			pickup_item()
+		else:
+			droped = false
 
 
 func pickup_item() -> void:
