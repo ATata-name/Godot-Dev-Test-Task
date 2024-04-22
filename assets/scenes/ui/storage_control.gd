@@ -9,7 +9,7 @@ const cell = preload("res://assets/scenes/ui/cell.tscn")
 @onready var description_label = $CenterContainer/VBoxContainer/Panel/HBoxContainer/VBoxContainer/Description
 @onready var buttons = $CenterContainer/VBoxContainer/Panel/HBoxContainer/buttons
 
-var storage : StorageClass :
+var storage : StorageClass:
 	set(value):
 		if storage != null and storage.state_updated.is_connected(update):
 			storage.state_updated.disconnect(update)

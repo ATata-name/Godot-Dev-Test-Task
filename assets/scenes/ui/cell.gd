@@ -1,8 +1,8 @@
 extends Panel
 
-signal selected(index)
+signal selected(index : int)
 
-var index = -1
+var index : int = -1
 
 
 func set_item(item : ItemData) -> void:
@@ -12,15 +12,15 @@ func set_item(item : ItemData) -> void:
 		$TextureRect.texture = null
 
 
-func select():
+func select() -> void:
 	self_modulate = Color.BLACK
 
 
-func unselect():
+func unselect() -> void:
 	self_modulate = Color.WHITE
 
 
-func _on_gui_input(event):
+func _on_gui_input(event) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.pressed:
 			select()

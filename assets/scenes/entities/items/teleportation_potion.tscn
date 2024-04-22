@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://bkmalq7n5qbds" path="res://assets/scenes/entities/items/teleportation_potion.tres" id="2_2j73y"]
 [ext_resource type="Texture2D" uid="uid://madbscpndicw" path="res://assets/images/items/teleport_potion.png" id="3_eb8fy"]
 
-[node name="TeleportationPotion" instance=ExtResource("1_cbc5p")]
+[node name="teleportation_potion" instance=ExtResource("1_cbc5p")]
 item_data = ExtResource("2_2j73y")
 
 [node name="Sprite2D" parent="." index="0"]

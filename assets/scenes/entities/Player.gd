@@ -8,8 +8,6 @@ signal keys_changed
 
 const speed : int = 400
 
-var controlled = true
-
 var max_health : int = 10:
 	set(new_max_health):
 		max_health = new_max_health
@@ -32,6 +30,7 @@ var keys : int = 0:
 @onready var raycast : RayCast2D = %RayCast2D
 
 var inventory : StorageClass = StorageClass.new()
+var controlled : bool= true
 
 
 func _ready() -> void:

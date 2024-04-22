@@ -1,13 +1,12 @@
 extends Node
 
-const effects_path = "res://assets/scenes/entities/effects/data/"
+const effects_path : String = "res://assets/scenes/entities/effects/data/"
 
-var effects = {}
+var effects : Dictionary = {} ## List of all effects in the game
 
 
 func _ready() -> void:
 	update_effects()
-	print(effects)
 
 	
 func update_effects() -> void:

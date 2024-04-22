@@ -1,6 +1,6 @@
 extends StorageControlClass
 
-@onready var use_button = $CenterContainer/VBoxContainer/Panel/HBoxContainer/buttons/Use
+@onready var use_button : Button = $CenterContainer/VBoxContainer/Panel/HBoxContainer/buttons/Use
 const item_inst = preload("res://assets/scenes/entities/items/item.tscn")
 
 

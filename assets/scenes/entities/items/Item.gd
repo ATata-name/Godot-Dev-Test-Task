@@ -11,6 +11,7 @@ signal collected(index)
 var index = -1
 var droped = false
 
+
 func _ready() -> void:
 	update_icon()
 

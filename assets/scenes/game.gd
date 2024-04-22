@@ -25,9 +25,7 @@ func _deferred_load_level(scene : PackedScene) -> Node:
 
 
 func restart_game() -> void:
-	#load_level(load("res://assets/scenes/world/street.tscn"))
 	get_tree().call_deferred("reload_current_scene")
-	#_ready()
 
 
 func add_item(item : ItemClass):

@@ -1,7 +1,7 @@
 extends EffectClass
 class_name AddMaxHealthEffect
 
-
+#You need this because get_class() doesn't display custom class name :(
 func get_effect_name() -> String:
 	return "AddMaxHealth"
 
